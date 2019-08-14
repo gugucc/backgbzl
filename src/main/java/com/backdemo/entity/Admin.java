@@ -2,9 +2,8 @@ package com.backdemo.entity;
 
 public class Admin {
     private int id;
-    private String username;
+    private String adminName;
     private String password;
-    private String tel;
 
     public int getId() {
         return id;
@@ -14,12 +13,12 @@ public class Admin {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getAdminName() {
+        return adminName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
     }
 
     public String getPassword() {
@@ -30,11 +29,4 @@ public class Admin {
         this.password = password;
     }
 
-    public String getTel() {
-        return tel;
-    }
-
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
 }

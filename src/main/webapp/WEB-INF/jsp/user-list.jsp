@@ -52,10 +52,6 @@
                     </form>
                 </div>
                 <div class="layui-card-body ">
-                    <div class = "layui-btn-container" >
-                        <button class="layui-btn" onclick="xadmin.open('添加歌手','./candidate-add',800,600)">
-                            <i class="layui-icon"></i>添加歌手</button>
-                    </div>
                     <table class="layui-table" id="test" lay-filter="test">
                         <thead>
                         <tr>
@@ -71,6 +67,9 @@
 </body>
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script type="text/html" id="barDemo1">
+    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="del">查看详情</a>
 </script>
 <script>
     layui.use('laydate',
@@ -134,20 +133,20 @@
 
         table.render({
             elem: '#test',
-            url: 'find_Candidate',
+            url: 'find_User',
             title: '用户数据表',
             cols:  [[
                 {type: 'checkbox', fixed: 'left'},
                 {
-                    field: 'c_id',
+                    field: 'uid',
                     width: 100,
                     title: 'ID',
                     sort: true,
                     edit: 'text'
                 },
                     {
-                        field: 'username',
-                        width: 250,
+                        field: 'uname',
+                        width: 100,
                         title: '用户名',
                         edit: 'text'
                     },
@@ -159,10 +158,24 @@
                         edit: 'text'
                     },
                     {
-                        field: 'project',
+                        field: 'tel',
                         width: 250,
-                        title: '作品',
+                        title: '电话',
+                        sort: true,
                         edit: 'text'
+                    },
+                    {
+                        field: 'email',
+                        width: 250,
+                        title: '邮件',
+                        sort: true,
+                        edit: 'text'
+                    },
+                    {
+                        fixed: 'right',
+                        width: 150,
+                        title: '作品',
+                        toolbar:'#barDemo1'
                     },
                 {fixed: 'right', title:'操作', toolbar: '#barDemo', width:250}
                 ]

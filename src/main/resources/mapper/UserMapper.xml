@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.backdemo.dao.UserDao">
+    <resultMap id="user" type="com.backdemo.entity.User">
+        <id property="uid" column="uid"/>
+        <result property="uname" column="uname"/>
+        <result property="sex" column="sex"/>
+        <result property="tel" column="tel"/>
+        <result property="email" column="email"/>
+    </resultMap>
+    <update id="uploadImages" parameterType="com.backdemo.entity.User">
+        update user set avatar=#{avatar} where uname=#{uname}
+    </update>
+    <select id="getUser" resultMap="user">
+        select uid,uname,sex,tel,email from user
+    </select>
+    <delete id="delUser" parameterType="int">
+		delete from user where uid=#{uid}
+	</delete>
+</mapper>

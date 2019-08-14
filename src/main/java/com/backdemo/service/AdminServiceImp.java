@@ -14,8 +14,8 @@ public class AdminServiceImp implements AdminService {
 
 
     @Override
-    public Admin login(String username, String password) {
-        return adminDao.findadmin(username,password);
+    public Admin login(String adminName, String password) {
+        return adminDao.findadmin(adminName,password);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class AdminServiceImp implements AdminService {
     }
 
     @Override
-    public List<Admin> souSou(String username) {
-        return adminDao.souSou(username);
+    public List<Admin> souSou(String adminName) {
+        return adminDao.souSou(adminName);
     }
 }

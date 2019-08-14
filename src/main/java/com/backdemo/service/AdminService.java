@@ -5,7 +5,7 @@ import com.backdemo.entity.Admin;
 import java.util.List;
 
 public interface AdminService  {
-    Admin login(String username, String password);
+    Admin login(String adminName, String password);
 
     void add(Admin admin);
 
@@ -17,6 +17,6 @@ public interface AdminService  {
 
     void deleteAdmin(int id);
 
-    List<Admin> souSou(String username);
+    List<Admin> souSou(String adminName);
 
 }

@@ -23,11 +23,11 @@ public class AdminController {
 
     @RequestMapping(value="/login_Action",method= RequestMethod.POST)
     @ResponseBody
-    public ModelAndView login(@RequestParam String username, @RequestParam String password, HttpServletResponse response, Model model) throws IOException {
-        System.out.println("用户登录："+username+password);
-        Admin admin= adminService.login(username,password);
+    public ModelAndView login(@RequestParam String adminName, @RequestParam String password, HttpServletResponse response, Model model) throws IOException {
+        System.out.println("用户登录："+adminName+password);
+        Admin admin= adminService.login(adminName,password);
         if (admin!=null){
-            model.addAttribute("username",username);
+            model.addAttribute("username",adminName);
             ModelAndView mv=new ModelAndView("index","model1",model);
             return mv;
         }else {

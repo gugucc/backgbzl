@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface AdminDao {
-    Admin findadmin(@Param("username") String username, @Param("password") String password);
+    Admin findadmin(@Param("adminName") String adminName, @Param("password") String password);
 
     void add(Admin admin);
 
